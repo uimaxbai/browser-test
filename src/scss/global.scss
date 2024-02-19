@@ -7,6 +7,7 @@ html, body, main {
     position: absolute;
     top: 0;
     left: 0;
+    // color: oklch(61% 0.2 29);
     font-family: 'IBM Plex Sans', system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans","Liberation Sans",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
 }
 
@@ -19,6 +20,7 @@ html, body, main {
         url('/fonts/eot/IBMPlexSans-Regular.eot') format('embedded-opentype');
     font-weight: normal;
     font-style: normal;
+    font-display: swap;
 }
 @font-face {
     font-family: 'IBM Plex Sans';
@@ -28,6 +30,7 @@ html, body, main {
         url('/fonts/eot/IBMPlexSans-Bold.eot') format('embedded-opentype');
     font-weight: bold;
     font-style: normal;
+    font-display: swap;
 }
 @font-face {
     font-family: 'IBM Plex Sans';
@@ -37,6 +40,7 @@ html, body, main {
         url('/fonts/eot/IBMPlexSans-Italic.eot') format('embedded-opentype');
     font-style: italic;
     font-style: normal;
+    font-display: swap;
 }
 @font-face {
     font-family: 'IBM Plex Sans';
@@ -46,4 +50,5 @@ html, body, main {
         url('/fonts/eot/IBMPlexSans-BoldItalic.eot') format('embedded-opentype');
     font-weight: bold;
     font-style: italic;
+    font-display: swap;
 }

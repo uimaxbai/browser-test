@@ -1,4 +1,5 @@
-import babel  from '@rollup/plugin-babel';
+import babel from '@rollup/plugin-babel';
+// import pluginPurgeCss from "@mojojoejo/vite-plugin-purgecss";
 
 export default {
   rollupInputOptions: {
@@ -14,7 +15,7 @@ export default {
             }
           }
         ]]
-      })
+      }),
     ],
-  }
+  },
 }

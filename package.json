@@ -9,6 +9,9 @@
     "preview": "vite preview"
   },
   "devDependencies": {
+    "postcss": "^8.4.35",
+    "postcss-preset-env": "^9.3.0",
+    "sass": "^1.71.0",
     "typescript": "^5.2.2",
     "vite": "^5.1.0"
   },
@@ -16,7 +19,10 @@
     "@babel/core": "^7.23.9",
     "@babel/preset-env": "^7.23.9",
     "@babel/runtime": "^7.23.9",
+    "@rollup/plugin-babel": "^6.0.4",
+    "@shoelace-style/shoelace": "^2.14.0",
     "babel": "^6.23.0",
-    "core-js": "^3.36.0"
+    "core-js": "^3.36.0",
+    "postcss-load-config": "^5.0.3"
   }
 }
