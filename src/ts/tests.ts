@@ -16,6 +16,7 @@ const tests = [
         description: "",
         element: "#cookies",
         result: 4,
+        points: 50,
         status: "Unknown test result"
     }
 ]

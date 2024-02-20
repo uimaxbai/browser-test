@@ -11,16 +11,20 @@ main {
             padding: 0.5em;
             border-radius: 0.5em;
             &.passed {
-                background: green;
+                background: #28a745;
+                color: #fff;
             }
             &.failed {
-                background: red;
+                background: #dc3545;
+                color: #fff;
             }
             &.partial {
                 background: yellow;
+                color: #000;
             }
             &.unknown {
-                background: grey;
+                background: #6c757d;
+                color: #fff;
             }
         
         }
