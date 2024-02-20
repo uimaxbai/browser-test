@@ -1,23 +1,6 @@
 import '../scss/index.scss';
+import { tests } from './tests';
 
-/*
-TESTS
-
-Tests return 0 if fully supported.
-They return 1 if partially supported.
-They return 2 if not supported at all.
-They return 3 if because of a user setting.
-They return 4 if unknown.
-*/
-const tests = [
-    {
-        name: "Cookies",
-        codeName: "cookies",
-        test: "/tests/cookies.js",
-        description: "",
-        element: "#cookiesTest",
-    }
-]
 
 // TODO: put it into html
 tests.forEach((test) => {
@@ -28,6 +11,26 @@ tests.forEach((test) => {
         const fn = new Function(text);
         const result = fn();
         console.log(result);
+        test.result = result[0];
+        test.status = result[1];
+        if (test.result === 0) {
+            document.querySelector(test.element)?.classList.add('passed');
+        }
+        else if (test.result === 1) {
+            document.querySelector(test.element)?.classList.add('partial');
+        }
+        else if (test.result === 1) {
+            document.querySelector(test.element)?.classList.add('partial');
+        }
+        else if (test.result === 2) {
+            document.querySelector(test.element)?.classList.add('failed');
+        }
+        else if (test.result === 3) {
+            document.querySelector(test.element)?.classList.add('partial');
+        }
+        else {
+            document.querySelector(test.element)?.classList.add('unknown');
+        }
     })
     .catch((error) => {
         console.error(error);

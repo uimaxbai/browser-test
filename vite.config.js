@@ -1,21 +1,10 @@
-import babel from '@rollup/plugin-babel';
+import legacy from '@vitejs/plugin-legacy';
 // import pluginPurgeCss from "@mojojoejo/vite-plugin-purgecss";
 
 export default {
-  rollupInputOptions: {
-    plugins: [
-      babel({
-        presets: [[
-          "@babel/preset-env",
-          {
-            "corejs": 2,
-            "useBuiltIns": "usage",
-            "targets": {
-              "ie": "11"
-            }
-          }
-        ]]
-      }),
-    ],
-  },
+  plugins: [
+    legacy({
+      targets: ['defaults', 'not IE 11'],
+    }),
+  ],
 }
