@@ -40,27 +40,34 @@ tests.forEach((test) => {
         return response.text()
     })
     .then((text) => {
-        var newText = text.replace("function main() {", 'function () {')
-        const fn = new Function("return " + newText)();
-        const result = fn();
-        console.log(result);
-        test.result = result[0];
-        test.status = result[1];
-        if (test.result === 0) {
-            document.querySelector(test.element)?.classList.add('passed');
+        console.log(text);
+        let result_text = Function("const to_ret =  " + text.replace("function main()", "() =>") + "\nreturn to_ret();")();
+
+        console.log(result_text);
+        let result = result_text[0];
+
+        let element = document.createElement('li');
+        element.id = test.name;
+
+        if (result === 0) {
+            element.classList.add('passed');
         }
-        else if (test.result === 1) {
-            document.querySelector(test.element)?.classList.add('partial');
+        else if (result === 1) {
+            element.classList.add('partial');
         }
-        else if (test.result === 2) {
-            document.querySelector(test.element)?.classList.add('failed');
+        else if (result === 2) {
+            element.classList.add('failed');
         }
-        else if (test.result === 3) {
-            document.querySelector(test.element)?.classList.add('partial');
+        else if (result === 3) {
+            element.classList.add('partial');
         }
         else {
-            document.querySelector(test.element)?.classList.add('unknown');
+            element.classList.add('unknown');
         }
+
+        element.innerHTML = `${test.name} - ${result_text[1]}`;
+
+        document.querySelector('.tests')!.appendChild(element);
     })
     .catch((error) => {
         console.error(error);
