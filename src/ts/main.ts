@@ -8,7 +8,8 @@ tests.forEach((test) => {
         return response.text()
     })
     .then((text) => {
-        const fn = new Function("return " + text)();
+        var newText = text.replace("function main() {", 'function () {')
+        const fn = new Function("return " + newText)();
         const result = fn();
         console.log(result);
         test.result = result[0];

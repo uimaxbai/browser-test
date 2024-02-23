@@ -1,4 +1,4 @@
-function () {
+function main() {
     if (navigator.cookieEnabled) {
         if (document.cookie !== undefined) {
             return [0, "Test passed."];
