@@ -11,13 +11,13 @@ They return 4 if unknown.
 const tests = [
     {
         name: "Cookies",
-        codeName: "cookies",
         test: "/tests/cookies.js",
-        description: "",
-        element: "#cookies",
-        result: 4,
         points: 50,
-        status: "Unknown test result"
+    },
+    {
+        name: "BigInt",
+        test: "/tests/bigint.js",
+        points: 50,
     }
 ]
 
